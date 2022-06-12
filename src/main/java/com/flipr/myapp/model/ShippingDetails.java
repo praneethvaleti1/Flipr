@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,10 +22,6 @@ public class ShippingDetails {
 	private String adress;
 	private String city;
 	private String pinCode;
-	
-	@OneToOne
-	@JoinColumn(name = "orderId")
-	private PurchaseOrder purchaseOrder;
 	
 	@ManyToOne
 	@JoinColumn(name = "custId")

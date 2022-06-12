@@ -33,15 +33,31 @@ public class MyappApplication {
 	@PostConstruct
 	public void init() {
 		
-		customerRepo.save(new Customer(1,"Customer1","cust1@gmail.com","1234567890", "City1"));
-		customerRepo.save(new Customer(2,"Customer2","cust2@gmail.com","1234567891", "City2"));
-		customerRepo.save(new Customer(3,"Customer3","cust3@gmail.com","1234567892", "City3"));
+		Customer c1 = new Customer(1, "Customer1", "cust1@gmail.com", "1234567890", "City1");
+		Customer c2 = new Customer(2, "Customer2", "cust2@gmail.com", "1234567891", "City2");
+		Customer c3 = new Customer(3, "Customer3", "cust3@gmail.com", "1234567892", "City3");
 		
-		orderRepo.save(new PurchaseOrder(1, "product1", "1", 121, 121, new Customer(1,"Customer1","cust1@gmail.com","1234567890", "City1")));
-		orderRepo.save(new PurchaseOrder(2, "product2", "2", 122, 122, new Customer(2,"Customer2","cust2@gmail.com","1234567891", "City2")));
-		orderRepo.save(new PurchaseOrder(3, "product3", "3", 123, 123, new Customer(3,"Customer3","cust3@gmail.com","1234567892", "City3")));
 		
-		shippingRepo.save(new ShippingDetails(1, "Jain University", "Bangalore", "12345", new PurchaseOrder(4, "product1", "1", 121, 121), new Customer(1,"Customer1","cust1@gmail.com","1234567890", "City1")));
+		customerRepo.save(c1);
+		customerRepo.save(c2);
+		customerRepo.save(c3);
+		
+		ShippingDetails sd1 = new ShippingDetails(4, "address1", "city1", "pincode1", c1);
+		ShippingDetails sd2 = new ShippingDetails(5, "address2", "city2", "pincode1", c2);
+		ShippingDetails sd3 = new ShippingDetails(6, "address3", "city3", "pincode1", c3);
+		
+		shippingRepo.save(sd1);
+		shippingRepo.save(sd2);
+		shippingRepo.save(sd3);
+		
+		PurchaseOrder pr1 = new PurchaseOrder(7, "product1", "quantity1", 121, 121, c1, sd1);
+		PurchaseOrder pr2 = new PurchaseOrder(8, "product2", "quantity2", 122, 122, c2, sd2);
+		PurchaseOrder pr3 = new PurchaseOrder(9, "product3", "quantity3", 123, 123, c3, sd3);
+
+		orderRepo.save(pr1);
+		orderRepo.save(pr2);
+		orderRepo.save(pr3);
+		 
 		
 	}
 	

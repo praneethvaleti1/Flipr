@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CustomException extends Exception {
 	
+	
+	private static final long serialVersionUID = 1L;
 	private String errorMsg;
 	private String timeStamp;
 	

@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,15 +29,10 @@ public class PurchaseOrder {
 	@ManyToOne
 	@JoinColumn(name="custId")
 	private Customer customer;
-
-	public PurchaseOrder(int orderId, String productName, String quantity, int pricing, int mrp) {
-		super();
-		this.orderId = orderId;
-		this.productName = productName;
-		this.quantity = quantity;
-		this.pricing = pricing;
-		this.mrp = mrp;
-	}
+	
+	@OneToOne
+	@JoinColumn(name = "shippingId")
+	private ShippingDetails shippingDetails;
 	
 
 }

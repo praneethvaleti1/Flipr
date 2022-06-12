@@ -7,16 +7,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class InputOrder {
+@NoArgsConstructor
+public class InputShippingDetails {
 	
-	private int orderId;
-	private String productName;
-	private String quantity;
-	private int pricing;
-	private int mrp;
+	private int shippingId;
+	private String adress;
+	private String city;
+	private String pinCode;
 	@NotNull
 	private int custId;
-	private int shippingId;
+	
+	
+
 }

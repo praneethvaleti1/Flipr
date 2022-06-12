@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustWithOrderList {
+public class CustWithOrderWithShipment {
 	
 	private int custId;
-	private List<OutputOrder> outputOrderList;
+	private List<OutputOrderWithShippingDetails> outputOrderWithShippingDetailsList;
 
 }

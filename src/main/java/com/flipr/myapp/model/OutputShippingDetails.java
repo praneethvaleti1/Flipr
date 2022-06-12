@@ -1,7 +1,5 @@
 package com.flipr.myapp.model;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustWithOrderList {
+public class OutputShippingDetails {
 	
-	private int custId;
-	private List<OutputOrder> outputOrderList;
+	private String adress;
+	private String city;
+	private String pinCode;
 
 }

@@ -23,4 +23,5 @@ public class Customer {
 	private String mobileNum;
 	private String city;
 	
+	
 }
